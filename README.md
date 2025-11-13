@@ -1,0 +1,1 @@
+# shade_plugin_osmand
