@@ -1,0 +1,81 @@
+{
+   "version":1,
+   "items":[
+
+      {
+         "type":"PLUGIN",
+         "pluginId":"shade.plugin",
+         "version" : 1,
+         "icon": {
+             "" : "@plugin-icon.png"
+             
+         },
+         "image": {
+             "" :"@plugin-image.webp"
+         },
+         "name":{
+            "":"Shading Path Plugin",
+            "de":"Kartenlegende-Plugin",
+            "fr":"Plugin Itinéraires Ombragés",
+            "it":"Plugin Legenda Mappa",
+            "es":"Plugin Leyenda del Mapa",
+            "pl":"Wtyczka Legenda Mapy",
+            "ua":"Плагін Легенди Карти",
+            "by":"Плагін Легенды Карты",
+            "pt":"Plugin Legenda do Mapa",
+            "nl":"Kaartlegenda Plugin",
+            "ar":" إضافة أسطورة الخريطة",
+            "ru":"Плагин Легенда Карты"
+         },
+         "description":{
+            "":"This package add a plugin for a new routing profile : compute pedestrian route considering shade exposition",
+            "de":"Dieses Paket fügt eine Kartenlegende für die Offline-Nutzung hinzu. Überprüfen Sie Ihr Menü -> Meine Orte -> Favoriten -> Kartenlegende. Standort der KARTENLEGENDE:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "fr":"Ce paquet ajoute une extension pour un nouveau profil d'itinéraire : calcul des itinéraires piétons en considérant l'exposition au soleil",
+            "it":"Questo pacchetto aggiunge una legenda della mappa per l'uso offline. Controlla nel tuo menu -> I miei luoghi -> Preferiti -> Legenda della mappa. Posizione della LEGENDA DELLA MAPPA:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "es":"Este paquete añade una leyenda del mapa para uso sin conexión. Revisa en tu menú -> Mis Lugares -> Favoritos -> Leyenda del mapa. Ubicación de la LEYENDA DEL MAPA:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "pl":"Ten pakiet dodaje legendę mapy do użytku offline. Sprawdź w menu -> Moje miejsca -> Ulubione -> Legenda mapy. Lokalizacja LEGENDY MAPY:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "ua":"Цей пакет додає легенду карти для використання офлайн. Перевірте у вашому меню -> Мої місця -> Вибране -> Легенда карти. Розташування ЛЕГЕНДИ КАРТИ:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "by":"Гэты пакет дадае легенду карты для выкарыстання афлайн. Праверце ў вашым меню -> Мае месцы -> Абранае -> Легенда карты. Размяшчэнне ЛЕГЕНДЫ КАРТЫ:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "pt":"Este pacote adiciona uma legenda do mapa para uso offline. Verifique no seu menu -> Meus Lugares -> Favoritos -> Legenda do mapa. Localização da LEGENDA DO MAPA:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "nl":"Dit pakket voegt een kaartlegenda toe voor offline gebruik. Controleer in uw menu -> Mijn Plaatsen -> Favorieten -> Kaartlegenda. Locatie van de KAARTLEGENDE:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "ar":"هذه الحزمة تضيف أسطورة الخريطة للاستخدام دون اتصال. تحقق من قائمتك -> أماكني -> المفضلة -> أسطورة الخريطة. موقع أسطورة الخريطة:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>",
+            "ru":"Этот пакет автоматически добавляет легенду карты для использования в автономном режиме. Меню - Мои места - Избранные - Map legend. Расположение Легенды карты:  <a href=\"https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059\">www.osmand.net/map</a>"
+         }
+      },
+
+      {
+         "type": "PROFILE",
+         "pluginId":"shade.plugin",
+         "file": "profile_pedestrian.json",
+         "appMode": {
+            "iconColor": "DEFAULT",
+            "iconName":"ic_action_motorcycle_dark",
+            "locIcon":"BENTLEY",
+            "navIcon":"BENTLEY",
+            "order": 33,
+            "parent":"pedestrian",
+            "stringKey": "pedestrian_shade",
+            "userProfileName": "Pedestrian Shade",
+            "version": 0
+         },
+         "prefs" : {
+            "route_service":"OSMAND",
+            "routing_profile":"routing-shade-1.xml/pedestrian-shade"
+        }
+      },
+
+      {
+         "type":"RESOURCES",
+         "pluginId":"shade.plugin",
+         "file":"res"
+      },
+
+      {
+         "type":"FILE",
+         "pluginId":"shade.plugin",
+         "subtype" : "routing_config",
+         "file":"\/routing\/routing-shade-1.xml"
+      }
+
+   ]
+}
