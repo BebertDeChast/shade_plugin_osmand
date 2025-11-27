@@ -71,7 +71,9 @@ if __name__ == "__main__":
             self.max_workers = max_workers
             
             # Get current time once for all calculations
-            self.time = pd.DatetimeIndex([pd.Timestamp.now().tz_localize("Europe/Paris")])
+            # self.time = pd.DatetimeIndex([pd.Timestamp.now().tz_localize("Europe/Paris")])
+            self.time = time_of_calculation
+            print(f"Time of calculation: {self.time[0]}")
             
             # Load data
             self.buildings, self.trees, self.center = self.get_data(input_file)
@@ -200,12 +202,12 @@ if __name__ == "__main__":
                 tags = list(w.tags)
                 tags.append(osmium.osm.Tag("shade:percentage", f"{shade_value}%"))
                 
-                if shade_value >= 75:
-                    tags.append(osmium.osm.Tag("shade", "yes"))
-                elif shade_value >= 15:
-                    tags.append(osmium.osm.Tag("shade", "partial"))
-                else:
-                    tags.append(osmium.osm.Tag("shade", "no"))
+                # if shade_value >= 75:
+                #     tags.append(osmium.osm.Tag("shade", "yes"))
+                # elif shade_value >= 15:
+                #     tags.append(osmium.osm.Tag("shade", "partial"))
+                # else:
+                #     tags.append(osmium.osm.Tag("shade", "no"))
 
                 # Create and write the modified way
                 new_way = osmium.osm.mutable.Way(w)
@@ -394,8 +396,12 @@ if __name__ == "__main__":
                 return 0  # No shadows found
 
     # File paths
-    input_file = "backend\\planet_-1.686,47.157_-1.369,47.287.osm.pbf"
-    output_pbf = "backend\\planet_-1.686,47.157_-1.369,47.287_updated.pbf"
+    input_file = "backend\\nantes.pbf"
+    output_pbf = "backend\\nantes_modified_updated.pbf"
+    date_time = "2025-06-21 12:00:00"  # Example date for summer solstice
+
+    time_of_calculation = pd.DatetimeIndex(
+        [pd.Timestamp(date_time).tz_localize("Europe/Paris")])
     
     # Process with optimized way modifier
     modifier = WayModifier(input_file, output_pbf)
