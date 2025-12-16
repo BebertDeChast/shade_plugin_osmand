@@ -8,6 +8,9 @@ import osmium
 import pandas as pd
 import numpy as np
 import time
+import subprocess
+import os
+import shutil
 from shapely.geometry import Point, Polygon, LineString, MultiPolygon
 from shapely.ops import transform, unary_union
 from shapely.affinity import translate
@@ -16,11 +19,16 @@ from pyproj import CRS, Transformer
 from pvlib import solarposition
 
 # --- CONFIGURATION ---
-INPUT_FILE = "backend\\nantes.pbf"
-OUTPUT_FILE = "backend\\nantes_with_shade.pbf"
+INPUT_FILE = r"C:\Users\othma\Desktop\shade_plugin_osmand\backend\nantes.pbf"
+OUTPUT_PBF = r"C:\Users\othma\Desktop\shade_plugin_osmand\backend\nantes_with_shade.pbf"
+OUTPUT_OBF = r"C:\Users\othma\Desktop\shade_plugin_osmand\backend\nantes_with_shade.obf"
 DATE_STR = "2025-06-21"  # Solstice d'été
 TARGET_TIMES = ["10:00:00"]
 TIMEZONE = "Europe/Paris"
+
+# OsmAndMapCreator path (download from https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip)
+OSMAND_MAP_CREATOR_PATH = r"C:\Users\othma\Downloads\OsmAndMapCreator-main"  # Path to OsmAndMapCreator folder
+OSMAND_MAP_CREATOR_BAT = os.path.join(OSMAND_MAP_CREATOR_PATH, "utilities.bat")
 
 # Paramètres physiques
 ROAD_WIDTH = 10.0
@@ -266,6 +274,98 @@ class RoadProcessor(osmium.SimpleHandler):
     def close(self):
         self.writer.close()
 
+
+def convert_pbf_to_obf(pbf_path, obf_path):
+    """Convert PBF file to OBF format using OsmAndMapCreator utilities."""
+    print(f"Converting {pbf_path} to OBF format...")
+    
+    lib_folder = os.path.join(OSMAND_MAP_CREATOR_PATH, "lib")
+    if not os.path.exists(lib_folder):
+        print(f"ERROR: OsmAndMapCreator lib folder not found at {lib_folder}")
+        print("Please download OsmAndMapCreator from:")
+        print("https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip")
+        return False
+    
+    # Create output directory if needed
+    output_dir = os.path.dirname(os.path.abspath(obf_path))
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Build classpath with all JARs in lib folder (Windows uses ; as separator)
+    jar_files = [os.path.join(lib_folder, f) for f in os.listdir(lib_folder) if f.endswith('.jar')]
+    classpath = ";".join(jar_files)
+    
+    pbf_abs = os.path.abspath(pbf_path)
+    
+    # Run Java directly with proper classpath - use MainUtilities generate-obf
+    cmd = [
+        "java",
+        "-Xms64M",
+        "-Xmx2G",
+        "-cp", classpath,
+        "net.osmand.MainUtilities",
+        "generate-obf",
+        pbf_abs
+    ]
+    
+    try:
+        print(f"Running OBF generation...")
+        print(f"Input: {pbf_abs}")
+        result = subprocess.run(
+            cmd, 
+            capture_output=True, 
+            text=True, 
+            timeout=3600,
+            cwd=OSMAND_MAP_CREATOR_PATH
+        )
+        
+        if result.returncode != 0:
+            print(f"Error during conversion (exit code {result.returncode})")
+            if result.stderr:
+                print("STDERR:", result.stderr[-2000:])
+            return False
+        
+        # OBF is created in OsmAndMapCreator folder with capitalized name
+        # The filename format is: Original_name.obf (first letter capitalized)
+        base_name = os.path.basename(pbf_abs).replace('.pbf', '.obf').replace('.osm', '.obf')
+        # Capitalize first letter (OsmAndMapCreator does this)
+        capitalized_name = base_name[0].upper() + base_name[1:]
+        
+        possible_obf_files = [
+            os.path.join(OSMAND_MAP_CREATOR_PATH, capitalized_name),
+            os.path.join(OSMAND_MAP_CREATOR_PATH, base_name),
+            os.path.join(OSMAND_MAP_CREATOR_PATH, base_name.replace('.obf', '_2.obf')),
+        ]
+        
+        for candidate in possible_obf_files:
+            if os.path.exists(candidate):
+                shutil.move(candidate, obf_path)
+                print(f"Successfully created OBF file: {obf_path}")
+                
+                # Clean up temp files
+                for ext in ['.obf.tmp', '.poi.odb', '.obf.prtebp']:
+                    temp_file = os.path.join(OSMAND_MAP_CREATOR_PATH, capitalized_name.replace('.obf', ext))
+                    if os.path.exists(temp_file):
+                        os.remove(temp_file)
+                
+                return True
+        
+        # List files to debug
+        print(f"\nLooking for generated OBF files in {OSMAND_MAP_CREATOR_PATH}...")
+        for f in os.listdir(OSMAND_MAP_CREATOR_PATH):
+            if f.endswith('.obf'):
+                print(f"  Found: {f}")
+                
+        print(f"OBF file was not found.")
+        return False
+        
+    except subprocess.TimeoutExpired:
+        print("Conversion timed out (exceeded 1 hour)")
+        return False
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
+        print("Java not found. Please install Java JDK/JRE and add to PATH.")
+        return False
+
 if __name__ == "__main__":
     start_total = time.time()
     
@@ -290,10 +390,24 @@ if __name__ == "__main__":
 
     # 4. Process Roads & Write Output
     print("Processing roads and calculating shade...")
-    processor = RoadProcessor(OUTPUT_FILE, geo_manager, shadow_calc, transformer)
+    
+    # Remove existing output file if it exists (avoid lock issues)
+    if os.path.exists(OUTPUT_PBF):
+        os.remove(OUTPUT_PBF)
+    
+    processor = RoadProcessor(OUTPUT_PBF, geo_manager, shadow_calc, transformer)
     processor.apply_file(INPUT_FILE, locations=True)
     processor.close()
 
-    end_total = time.time()
     print(f"Done! Modified {processor.modified_count} roads.")
-    print(f"Total execution time: {end_total - start_total:.2f} seconds")
+    print(f"PBF file created: {OUTPUT_PBF}")
+    
+    # 5. Convert PBF to OBF
+    print("\n--- Converting to OBF format ---")
+    if convert_pbf_to_obf(OUTPUT_PBF, OUTPUT_OBF):
+        print(f"OBF file created: {OUTPUT_OBF}")
+    else:
+        print("OBF conversion failed. The PBF file is still available.")
+
+    end_total = time.time()
+    print(f"\nTotal execution time: {end_total - start_total:.2f} seconds")
