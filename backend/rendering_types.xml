@@ -2825,13 +2825,13 @@
 	</category>
 
 	<!-- Shade percentage tags for roads (custom addition for shade plugin) -->
-	<category name="shade">
+	<!-- <category name="shade">
 		<type tag="shade:10" additional="true"/>
 		<type tag="shade:12" additional="true"/>
 		<type tag="shade:14" additional="true"/>
 		<type tag="shade:16" additional="true"/>
 		<type tag="shade:percentage" additional="true"/>
-	</category>
+	</category> -->
 
 	<category name="surface grade">
 		<entity_convert pattern="tag_transform" from_tag="surface:grade" from_value="0" to_tag1="smoothness" to_value1="horrible"/>
@@ -7131,6 +7131,10 @@
 	<category name="routing">
 		<!-- add more granular example like -->
 		<!--  <routing_type tag="highway" value="motorway" mode="register" base="true"/> -->
+		<type tag="shade_morning" minzoom="1"/>
+    	<type tag="shade_midday" minzoom="1"/>
+    	<type tag="shade_afternoon" minzoom="1"/>
+    	<type tag="shade_avg" minzoom="1"/>
 		<routing_type tag="highway" mode="register" base="true"/>
 		<routing_type tag="osmand_change" mode="register" base="true"/>
 		<routing_type tag="junction" mode="register" base="true"/>
