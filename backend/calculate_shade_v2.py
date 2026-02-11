@@ -240,7 +240,7 @@ class RoadProcessor(osmium.SimpleHandler):
                 if any(v > 0 for v in shades.values()):
                     new_tags = dict(w.tags) # Convertir en dict python standard
                     for label, percent in shades.items():
-                        new_tags[f"shade:{label}"] = f"{int(round(percent))}"
+                        new_tags[f"shade"] = f"{int(round(percent))}"
                     
                     # Reconstruction objet Osmium (un peu verbeux mais nécessaire)
                     wk = osmium.osm.mutable.Way(w)

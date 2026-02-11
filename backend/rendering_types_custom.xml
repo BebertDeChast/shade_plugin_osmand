@@ -7480,8 +7480,7 @@
 		<routing_type tag="red_turn:straight:bicycle" mode="amend"/>
 		<routing_type tag="red_turn:right:bicycle" mode="amend"/>
 		<routing_type tag="red_turn:left:bicycle" mode="amend"/>
-	</category>
-	<category name="custom_shade">
-		<type id="120" tag="shade:10" value="" additional="text" minzoom="1" />
+
+		<routing_type tag="shade" mode="amend" base="true"/>
 	</category>
 </osmand_types>
