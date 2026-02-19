@@ -1,28 +1,49 @@
 # Backend Processing for Shaded Maps
 
-This document outlines the steps to generate a custom OsmAnd map file (`.obf`) with shade data.
+This document outlines the procedure for enriching OpenStreetMap data with shade calculations and generating a custom OsmAnd map file (`.obf`).
 
 ## Prerequisites
 
-- An `.pbf` file of the desired map area, downloadable from sources like [Geofabrik](https://www.geofabrik.de/).
-- OsmAndMapCreator.
+* A `.pbf` file of the desired geographical area (e.g., from Geofabrik).
+* OsmAndMapCreator installed on your machine.
+* Python installed with necessary dependencies (`osmium`, `shapely`, `pvlib`, `pandas`, `python-dotenv`).
 
-## Steps
+## Configuration (.env)
 
-1.  **Configure Shade Calculation:**
-    -   Adjust the parameters in the `calculate_shade_v2.py` script to suit your needs.
+Before running the scripts, configure your environment by creating a `.env` file based on `.env.example`:
 
-2.  **Run Shade Calculation:**
-    -   Execute the `calculate_shade_v2.py` script.
-    -   Note: This process can be time-consuming.
+* **OSM_MAP_CREATOR_DIR**: Path to the root directory of OsmAndMapCreator[cite: 1].
+* **CUSTOM_XML_PATH**: Path to your `rendering_types_custom.xml` file[cite: 1].
+* **PBF_FILE_PATH**: Path to your source `.pbf` file.
+* **OUTPUT_DIR**: Destination folder for the OBF and reports.
 
-3.  **Update Rendering Types:**
-    -   Copy the `rendering_types_custom.xml` file.
-    -   Place it inside the `OsmAnd-java-master-snapshot.jar` located in the `OSMand-map-creator/lib/` directory, at the path `net/osmand/osm/rendering_types.xml`.
+---
 
-4.  **Generate `.obf` File:**
-    -   Run OsmAndMapCreator to generate the final `.obf` map file.
-    -   It is recommended to adjust the RAM allocation for OsmAndMapCreator via the command line for better performance.
+## Script Usage
 
-5.  **Verify Data:**
-    -   Use the Inspector tool with the `-vrouting` parameter to verify that the routing and shade data are correctly included in the generated `.obf` file.
+### 1. Shade Calculation
+The `calculate_shade_v2.py` script calculates the percentage of shade cast by buildings and trees onto the road at specific times. 
+* **Action**: Run `python calculate_shade_v2.py`.
+* **Default Settings**: It targets 10:00, 12:00, and 14:00 using a specific date (e.g., Summer Solstice).
+* **Result**: Generates an enriched PBF file containing `shade10`, `shade12`, and `shade14` tags.
+
+### 2. Updating OsmAndMapCreator
+For the map creation tool to recognize your new shade tags, you must inject the XML configuration into the Java engine.
+* **Action**: Run `python update_osmandmapcreator.py`.
+* **Result**: Automatically replaces `rendering_types.xml` inside the `OsmAnd-java-master-snapshot.jar` with your custom version[cite: 1].
+
+### 3. OBF File Generation
+The `make_obf.py` script automates the final map creation and can verify data integrity.
+* **Action**: Run `python make_obf.py`.
+* **Inspection**: Use the `--inspect` flag to generate a CSV routing report in the output directory to verify the inclusion of shade data.
+
+---
+
+## Components Summary
+
+| File | Role |
+| :--- | :--- |
+| `calculate_shade_v2.py` | Calculates shadows using solar position and spatial indexing (STRtree). |
+| `update_osmandmapcreator.py` | [cite_start]Modifies the OsmAnd JAR to include custom rendering types[cite: 1]. |
+| `make_obf.py` | Runs OsmAndMapCreator to compile the PBF into an OBF file. |
+| `.env` | Centralizes file paths and configuration variables. |
