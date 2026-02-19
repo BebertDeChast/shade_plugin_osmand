@@ -49,16 +49,14 @@
          "file": "profile_pedestrian.json",
          "appMode": {
             "iconColor": "DEFAULT",
-            "iconName":"ic_action_motorcycle_dark",
-            "locIcon":"BENTLEY",
-            "navIcon":"BENTLEY",
-            "order": 33,
-            "parent":"pedestrian",
+            "iconName": "ic_action_pedestrian_dark",
+            "locIcon": "STATIC_DEFAULT",
+            "navIcon": "MOVEMENT_DEFAULT",
+            "order": 15,
             "stringKey": "pedestrian_shade",
-            "userProfileName": "Pedestrian Shade",
+            "userProfileName": "Shade Profil",
             "version": 0
-         },
-         "prefs" : {
+         },"prefs" : {
             "route_service":"OSMAND",
             "routing_profile":"routing-shade-1.xml/pedestrian-shade"
         }
@@ -75,6 +73,20 @@
          "pluginId":"shade.plugin",
          "subtype" : "routing_config",
          "file":"\/routing\/routing-shade-1.xml"
+      },
+
+      {
+         "type":"FILE",
+         "pluginId":"shade.plugin",
+         "subtype" : "rendering_style",
+         "file":"\/rendering\/shade-rendering.render.xml"
+      },
+
+      {
+         "type":"FILE",
+         "pluginId":"shade.plugin",
+         "subtype" : "obf_map",
+         "file":"\/res\/Nantes_with_shade_yes_no.obf"
       }
 
    ]

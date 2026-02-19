@@ -14,7 +14,7 @@
 		<!-- color_0 used for route line stroke color -->
 		<!-- color_2 used for route direction arrows -->
 		<!-- color_3 used for turn arrows on the route -->
-		<case color="#882a4bd1" strokeWidth="5:5" color_3="#ffde5b" color_2="#bfccff" strokeWidth_3="2:1">
+		<case color="#006912d1" strokeWidth="5:5" color_3="#ffde5b" color_2="#bfccff" strokeWidth_3="2:1">
 			<apply_if nightMode="true" color="#ffdf3d" color_2="#806f1f" color_3="#41a6d9" strokeWidth="5:5" color_0="#CCb29c2b" strokeWidth_0="5:5"/>
 		</case>
 	</renderingAttribute>

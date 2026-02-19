@@ -30,8 +30,8 @@
 		<parameter id="avoid_motorway" name="Avoid motorways" description="Avoid motorways" type="boolean"/>
 		<parameter id="avoid_tunnels" name="Avoid tunnels" description="Avoid tunnels" type="boolean"/>
 		<parameter id="avoid_stairs" name="Avoid stairs" description="Avoid stairs" type="boolean"/>
-		<parameter id="avoid_caca" name="Avoid caca" description="Avoid caca" type="boolean"/>
-		<parameter id="hour" name="Hour" description="Hour" type="numeric" values="0,1,2,3,4,5,6,7" valueDescriptions="0h,1h,2h,3h,4h,5h,6h,7h"/>
+  		<parameter id="avoid_test" name="Avoid test" description="Avoid test" type="boolean"/>
+		<parameter id="hour_shading" name="Shading Hour" description="Hour for shading" type="numeric" values="0,10,14" valueDescriptions="night,10h,14h"/>
 		<parameter id="avoid_unpaved" name="Avoid unpaved roads" description="Avoid unpaved roads" type="boolean"/>
 		<parameter id="allow_private" name="Allow private access" description="Allow access to private areas" type="boolean"/>
 		<parameter id="allow_via_ferrata" name="Allow via ferrata" description="Allow via ferrata paths" type="boolean"/>
@@ -203,6 +203,112 @@
 		</way>
 
 		<way attribute="priority">
+			<!--Shading priority-->
+			<select value="0.01" t="shade" v="0"/>
+			<select value="0.01" t="shade" v="1"/>
+			<select value="0.02" t="shade" v="2"/>
+			<select value="0.03" t="shade" v="3"/>
+			<select value="0.04" t="shade" v="4"/>
+			<select value="0.05" t="shade" v="5"/>
+			<select value="0.06" t="shade" v="6"/>
+			<select value="0.07" t="shade" v="7"/>
+			<select value="0.08" t="shade" v="8"/>
+			<select value="0.09" t="shade" v="9"/>
+			<select value="0.10" t="shade" v="10"/>
+			<select value="0.11" t="shade" v="11"/>
+			<select value="0.12" t="shade" v="12"/>
+			<select value="0.13" t="shade" v="13"/>
+			<select value="0.14" t="shade" v="14"/>
+			<select value="0.15" t="shade" v="15"/>
+			<select value="0.16" t="shade" v="16"/>
+			<select value="0.17" t="shade" v="17"/>
+			<select value="0.18" t="shade" v="18"/>
+			<select value="0.19" t="shade" v="19"/>
+			<select value="0.20" t="shade" v="20"/>
+			<select value="0.21" t="shade" v="21"/>
+			<select value="0.22" t="shade" v="22"/>
+			<select value="0.23" t="shade" v="23"/>
+			<select value="0.24" t="shade" v="24"/>
+			<select value="0.25" t="shade" v="25"/>
+			<select value="0.26" t="shade" v="26"/>
+			<select value="0.27" t="shade" v="27"/>
+			<select value="0.28" t="shade" v="28"/>
+			<select value="0.29" t="shade" v="29"/>
+			<select value="0.30" t="shade" v="30"/>
+			<select value="0.31" t="shade" v="31"/>
+			<select value="0.32" t="shade" v="32"/>
+			<select value="0.33" t="shade" v="33"/>
+			<select value="0.34" t="shade" v="34"/>
+			<select value="0.35" t="shade" v="35"/>
+			<select value="0.36" t="shade" v="36"/>
+			<select value="0.37" t="shade" v="37"/>
+			<select value="0.38" t="shade" v="38"/>
+			<select value="0.39" t="shade" v="39"/>
+			<select value="0.40" t="shade" v="40"/>
+			<select value="0.41" t="shade" v="41"/>
+			<select value="0.42" t="shade" v="42"/>
+			<select value="0.43" t="shade" v="43"/>
+			<select value="0.44" t="shade" v="44"/>
+			<select value="0.45" t="shade" v="45"/>
+			<select value="0.46" t="shade" v="46"/>
+			<select value="0.47" t="shade" v="47"/>
+			<select value="0.48" t="shade" v="48"/>
+			<select value="0.49" t="shade" v="49"/>
+			<select value="0.50" t="shade" v="50"/>
+			<select value="0.51" t="shade" v="51"/>
+			<select value="0.52" t="shade" v="52"/>
+			<select value="0.53" t="shade" v="53"/>
+			<select value="0.54" t="shade" v="54"/>
+			<select value="0.55" t="shade" v="55"/>
+			<select value="0.56" t="shade" v="56"/>
+			<select value="0.57" t="shade" v="57"/>
+			<select value="0.58" t="shade" v="58"/>
+			<select value="0.59" t="shade" v="59"/>
+			<select value="0.60" t="shade" v="60"/>
+			<select value="0.61" t="shade" v="61"/>
+			<select value="0.62" t="shade" v="62"/>
+			<select value="0.63" t="shade" v="63"/>
+			<select value="0.64" t="shade" v="64"/>
+			<select value="0.65" t="shade" v="65"/>
+			<select value="0.66" t="shade" v="66"/>
+			<select value="0.67" t="shade" v="67"/>
+			<select value="0.68" t="shade" v="68"/>
+			<select value="0.69" t="shade" v="69"/>
+			<select value="0.70" t="shade" v="70"/>
+			<select value="0.71" t="shade" v="71"/>
+			<select value="0.72" t="shade" v="72"/>
+			<select value="0.73" t="shade" v="73"/>
+			<select value="0.74" t="shade" v="74"/>
+			<select value="0.75" t="shade" v="75"/>
+			<select value="0.76" t="shade" v="76"/>
+			<select value="0.77" t="shade" v="77"/>
+			<select value="0.78" t="shade" v="78"/>
+			<select value="0.79" t="shade" v="79"/>
+			<select value="0.80" t="shade" v="80"/>
+			<select value="0.81" t="shade" v="81"/>
+			<select value="0.82" t="shade" v="82"/>
+			<select value="0.83" t="shade" v="83"/>
+			<select value="0.84" t="shade" v="84"/>
+			<select value="0.85" t="shade" v="85"/>
+			<select value="0.86" t="shade" v="86"/>
+			<select value="0.87" t="shade" v="87"/>
+			<select value="0.88" t="shade" v="88"/>
+			<select value="0.89" t="shade" v="89"/>
+			<select value="0.90" t="shade" v="90"/>
+			<select value="0.91" t="shade" v="91"/>
+			<select value="0.92" t="shade" v="92"/>
+			<select value="0.93" t="shade" v="93"/>
+			<select value="0.94" t="shade" v="94"/>
+			<select value="0.95" t="shade" v="95"/>
+			<select value="0.96" t="shade" v="96"/>
+			<select value="0.97" t="shade" v="97"/>
+			<select value="0.98" t="shade" v="98"/>
+			<select value="0.99" t="shade" v="99"/>
+			<select value="1.00" t="shade" v="100"/>
+
+			<!--<select value="10" t="shade" v="yes"/>
+			<select value="0.5" t="shade" v="no"/>-->
+
 			<!-- Additional tags -->
 			<select value="0.05" t="foot" v="private"/>
 			<select value="0.05" t="foot" v="destination"/>

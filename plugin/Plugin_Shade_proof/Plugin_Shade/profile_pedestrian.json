@@ -1,0 +1,12 @@
+{
+  "force_private_access_routing": "false",
+  "default_driving_region": "EUROPE_ASIA",
+  "last_known_map_rotation": "349.22742",
+  "last_known_map_elevation": "90.0",
+  "nrenderer_appMode": "pedestrian",
+  "nrenderer_baseAppMode": "pedestrian",
+  "OsmAnd (online tiles)_param_min": "0.0",
+  "OsmAnd (online tiles)_param_max": "0.0",
+  "OsmAnd (online tiles)_param_step": "0.0",
+  "prouting_allow_private": "false"
+}
