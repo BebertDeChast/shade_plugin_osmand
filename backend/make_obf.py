@@ -49,7 +49,7 @@ def executer_pipeline():
     
     try:
         print(f"Exécution : {' '.join(cmd_generate)}")
-        subprocess.run(cmd_generate, check=True)
+        subprocess.run(cmd_generate, cwd=OSM_MAP_CREATOR_DIR, check=True)
         print("-> Génération OBF terminée avec succès.")
     except subprocess.CalledProcessError as e:
         print(f"Erreur lors de la génération de l'OBF : {e}")
@@ -86,7 +86,7 @@ def executer_pipeline():
         try:
             print(f"Exécution : {' '.join(cmd_inspect)} > {csv_report_path}")
             with open(csv_report_path, "w", encoding="utf-8") as fichier_csv:
-                subprocess.run(cmd_inspect, stdout=fichier_csv, check=True)
+                subprocess.run(cmd_inspect, cwd=OSM_MAP_CREATOR_DIR, stdout=fichier_csv, check=True)
             print(f"-> Rapport généré avec succès à l'emplacement : {csv_report_path}\n")
         except subprocess.CalledProcessError as e:
             print(f"Erreur lors de l'inspection de l'OBF : {e}")
