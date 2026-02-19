@@ -49,6 +49,7 @@ def executer_pipeline():
     
     try:
         print(f"Exécution : {' '.join(cmd_generate)}")
+        # Ajout du paramètre cwd pour exécuter la commande dans le bon dossier
         subprocess.run(cmd_generate, cwd=OSM_MAP_CREATOR_DIR, check=True)
         print("-> Génération OBF terminée avec succès.")
     except subprocess.CalledProcessError as e:
@@ -56,11 +57,15 @@ def executer_pipeline():
         sys.exit(1)
 
     # RECHERCHE ET DÉPLACEMENT DE L'OBF GÉNÉRÉ
+    # On ajoute la recherche dans le dossier d'OsmAndMapCreator
+    obf_genere_osmand = os.path.join(OSM_MAP_CREATOR_DIR, nom_obf)
     obf_genere_courant = os.path.join(os.getcwd(), nom_obf)
     obf_genere_source = os.path.join(os.path.dirname(PBF_FILE_PATH), nom_obf)
     
     obf_trouve = None
-    if os.path.exists(obf_genere_courant):
+    if os.path.exists(obf_genere_osmand):
+        obf_trouve = obf_genere_osmand
+    elif os.path.exists(obf_genere_courant):
         obf_trouve = obf_genere_courant
     elif os.path.exists(obf_genere_source):
         obf_trouve = obf_genere_source
@@ -86,6 +91,7 @@ def executer_pipeline():
         try:
             print(f"Exécution : {' '.join(cmd_inspect)} > {csv_report_path}")
             with open(csv_report_path, "w", encoding="utf-8") as fichier_csv:
+                # Ajout du paramètre cwd ici aussi
                 subprocess.run(cmd_inspect, cwd=OSM_MAP_CREATOR_DIR, stdout=fichier_csv, check=True)
             print(f"-> Rapport généré avec succès à l'emplacement : {csv_report_path}\n")
         except subprocess.CalledProcessError as e:
