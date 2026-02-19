@@ -12,8 +12,8 @@ This document outlines the procedure for enriching OpenStreetMap data with shade
 
 Before running the scripts, configure your environment by creating a `.env` file based on `.env.example`:
 
-* **OSM_MAP_CREATOR_DIR**: Path to the root directory of OsmAndMapCreator[cite: 1].
-* **CUSTOM_XML_PATH**: Path to your `rendering_types_custom.xml` file[cite: 1].
+* **OSM_MAP_CREATOR_DIR**: Path to the root directory of OsmAndMapCreator.
+* **CUSTOM_XML_PATH**: Path to your `rendering_types_custom.xml` file.
 * **PBF_FILE_PATH**: Path to your source `.pbf` file.
 * **OUTPUT_DIR**: Destination folder for the OBF and reports.
 
@@ -30,7 +30,7 @@ The `calculate_shade_v2.py` script calculates the percentage of shade cast by bu
 ### 2. Updating OsmAndMapCreator
 For the map creation tool to recognize your new shade tags, you must inject the XML configuration into the Java engine.
 * **Action**: Run `python update_osmandmapcreator.py`.
-* **Result**: Automatically replaces `rendering_types.xml` inside the `OsmAnd-java-master-snapshot.jar` with your custom version[cite: 1].
+* **Result**: Automatically replaces `rendering_types.xml` inside the `OsmAnd-java-master-snapshot.jar` with your custom version.
 
 ### 3. OBF File Generation
 The `make_obf.py` script automates the final map creation and can verify data integrity.
@@ -44,6 +44,6 @@ The `make_obf.py` script automates the final map creation and can verify data in
 | File | Role |
 | :--- | :--- |
 | `calculate_shade_v2.py` | Calculates shadows using solar position and spatial indexing (STRtree). |
-| `update_osmandmapcreator.py` | [cite_start]Modifies the OsmAnd JAR to include custom rendering types[cite: 1]. |
+| `update_osmandmapcreator.py` | Modifies the OsmAnd JAR to include custom rendering types. |
 | `make_obf.py` | Runs OsmAndMapCreator to compile the PBF into an OBF file. |
 | `.env` | Centralizes file paths and configuration variables. |
