@@ -32,12 +32,11 @@
             "navIcon": "MOVEMENT_DEFAULT",
             "order": 15,
             "stringKey": "pedestrian_shade",
+            "routeService": "OSMAND",
+            "routingProfile": "routing-shade-1.xml/pedestrian-shade",
             "userProfileName": "Shade Profil",
             "version": 1.0
-         },"prefs" : {
-            "route_service":"OSMAND",
-            "routing_profile":"routing-shade-1.xml/pedestrian-shade"
-        }
+         }
       },
 
       {
