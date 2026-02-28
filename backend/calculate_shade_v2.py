@@ -17,9 +17,10 @@ from pvlib import solarposition
 
 # --- CONFIGURATION ---
 INPUT_FILE = "backend\\nantes.pbf"
-OUTPUT_FILE = "backend\\nantes_with_3_shades.pbf"
+OUTPUT_FILE = "backend\\nantes_with_all_shades.pbf"
 DATE_STR = "2025-06-21"  # Solstice d'été
-TARGET_TIMES = ["10:00:00","12:00:00","14:00:00"]
+TARGET_TIMES = ["00:00:00","02:00:00","04:00:00","06:00:00","08:00:00",
+"10:00:00","12:00:00","14:00:00","16:00:00","18:00:00","20:00:00","22:00:00"]
 TIMEZONE = "Europe/Paris"
 
 # Paramètres physiques

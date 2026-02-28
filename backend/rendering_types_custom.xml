@@ -7481,8 +7481,22 @@
 		<routing_type tag="red_turn:right:bicycle" mode="amend"/>
 		<routing_type tag="red_turn:left:bicycle" mode="amend"/>
 
+		<routing_type tag="shade00" mode="amend" base="true"/>
+		<routing_type tag="shade02" mode="amend" base="true"/>
+		<routing_type tag="shade04" mode="amend" base="true"/>
+		<routing_type tag="shade06" mode="amend" base="true"/>
+		<routing_type tag="shade08" mode="amend" base="true"/>
 		<routing_type tag="shade10" mode="amend" base="true"/>
 		<routing_type tag="shade12" mode="amend" base="true"/>
 		<routing_type tag="shade14" mode="amend" base="true"/>
+		<routing_type tag="shade16" mode="amend" base="true"/>
+		<routing_type tag="shade18" mode="amend" base="true"/>
+		<routing_type tag="shade20" mode="amend" base="true"/>
+		<routing_type tag="shade22" mode="amend" base="true"/>
+	</category>
+
+	<category name="extra">
+		<type tag="shade12" value="" minzoom="1"/>
+		<type tag="maxspeed" value="" minzoom="1"/>
 	</category>
 </osmand_types>
