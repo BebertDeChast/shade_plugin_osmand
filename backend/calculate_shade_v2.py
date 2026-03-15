@@ -17,9 +17,10 @@ from pvlib import solarposition
 
 # --- CONFIGURATION ---
 INPUT_FILE = "backend\\nantes.pbf"
-OUTPUT_FILE = "backend\\nantes_with_shade.pbf"
+OUTPUT_FILE = "backend\\nantes_with_all_shades.pbf"
 DATE_STR = "2025-06-21"  # Solstice d'été
-TARGET_TIMES = ["10:00:00"]
+TARGET_TIMES = ["00:00:00","02:00:00","04:00:00","06:00:00","08:00:00",
+"10:00:00","12:00:00","14:00:00","16:00:00","18:00:00","20:00:00","22:00:00"]
 TIMEZONE = "Europe/Paris"
 
 # Paramètres physiques
@@ -240,7 +241,7 @@ class RoadProcessor(osmium.SimpleHandler):
                 if any(v > 0 for v in shades.values()):
                     new_tags = dict(w.tags) # Convertir en dict python standard
                     for label, percent in shades.items():
-                        new_tags[f"shade:{label}"] = f"{int(round(percent))}"
+                        new_tags[f"shade{label}"] = f"{int(round(percent))}"
                     
                     # Reconstruction objet Osmium (un peu verbeux mais nécessaire)
                     wk = osmium.osm.mutable.Way(w)

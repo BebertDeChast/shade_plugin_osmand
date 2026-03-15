@@ -1,2 +1,4 @@
 *.osm.pbf
+*.pbf
+.env
 .idea/
