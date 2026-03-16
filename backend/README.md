@@ -46,4 +46,3 @@ The `make_obf.py` script automates the final map creation and can verify data in
 | `calculate_shade_v2.py` | Calculates shadows using solar position and spatial indexing (STRtree). |
 | `update_osmandmapcreator.py` | Modifies the OsmAnd JAR to include custom rendering types. |
 | `make_obf.py` | Runs OsmAndMapCreator to compile the PBF into an OBF file. |
-| `.env` | Centralizes file paths and configuration variables. |

@@ -12,6 +12,8 @@ This repository is divided into two main parts:
     -   Render shaded areas on the map.
     -   Provide a custom routing profile that favors shaded routes.
 
+The **`images`** folder contains images for the osm diary
+
 ## Goal
 
 The primary goal is to provide users with routing options that take shade into account, offering more comfortable routes during sunny or hot weather conditions.
