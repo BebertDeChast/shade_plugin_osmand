@@ -1,0 +1,55 @@
+{
+   "version":1,
+   "items":[
+
+      {
+         "type":"PLUGIN",
+         "pluginId":"shade.plugin3",
+         "version" : 1,
+         "icon": {
+             "" : "@plugin-icon.png"
+
+         },
+         "image": {
+             "" :"@plugin-image.webp"
+         },
+         "name":{
+            "":"Shading Path Plugin3",
+            "fr":"Plugin3 Itinéraires Ombragés"
+         },
+         "description":{
+            "":"This package add a plugin for a new routing profile : compute pedestrian route considering shade exposition",
+            "fr":"Ce paquet ajoute une extension pour un nouveau profil d'itinéraire : calcul des itinéraires piétons en considérant l'exposition au soleil"
+         }
+      },
+
+      {
+         "type": "PROFILE",
+         "pluginId":"shade.plugin3",
+         "file": "shade_profile3.json",
+         "appMode": {
+            "parent": "walking",
+            "stringKey": "shade_profile3",
+            "userProfileName": "pedestrian_shade3",
+            "iconColor": "RED"
+         },
+         "prefs": {
+            "renderer":"shade_rendering3.render.xml"
+         }
+      },
+
+      {
+         "type":"RESOURCES",
+         "pluginId":"shade.plugin3",
+         "file":"res"
+      },
+
+      {
+        "type": "FILE",
+        "pluginId": "shade.plugin3",
+        "subtype": "rendering_style",
+        "file": "\/rendering\/shade_rendering3.render.xml"
+      }
+
+   ]
+}

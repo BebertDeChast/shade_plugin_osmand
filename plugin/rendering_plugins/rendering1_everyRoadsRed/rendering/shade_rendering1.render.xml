@@ -1,0 +1,57 @@
+<renderingStyle name="Shade rendering1" depends="default" defaultColor="#ff0000" version="1">
+
+    <renderingProperty attr="roadStyle" category="ui_hidden" type="string"/>
+
+    <renderingAttribute name="motorwayRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+
+    <renderingAttribute name="trunkRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+    
+    <renderingAttribute name="primaryRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+
+    <renderingAttribute name="secondaryRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+
+    <renderingAttribute name="tertiaryRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+
+    <renderingAttribute name="residentialRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+
+    <renderingAttribute name="pedestrianRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+    <renderingAttribute name="footwayColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+    
+    <renderingAttribute name="serviceRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+
+    
+    <order>
+    </order>
+
+    <text>
+    </text>
+
+    <point>
+	</point>
+
+    <polygon>
+	</polygon>
+
+    <line>
+    </line>
+    
+
+</renderingStyle>
