@@ -1,0 +1,70 @@
+{
+   "version":1.0,
+   "items":[
+      {
+         "type":"PLUGIN",
+         "pluginId":"shade.plugin",
+         "version" : 1,
+         "icon": {
+             "" : "@plugin-icon.png"
+         },
+         "image": {
+             "" :"@plugin-image.webp"
+         },
+         "name":{
+            "":"Shading Path Plugin",
+            "fr":"Plugin Itinéraires Ombragés"
+         },
+         "description":{
+            "":"This package add a plugin for a new routing profile : compute pedestrian route considering shade exposition",
+            "fr":"Ce paquet ajoute une extension pour un nouveau profil d'itinéraire : calcul des itinéraires piétons en considérant l'exposition au soleil"
+         }
+      },
+
+      {
+         "type": "PROFILE",
+         "pluginId":"shade.plugin",
+         "file": "profile_pedestrian.json",
+         "appMode": {
+            "iconColor": "DEFAULT",
+            "iconName": "ic_action_pedestrian_dark",
+            "locIcon": "STATIC_DEFAULT",
+            "navIcon": "MOVEMENT_DEFAULT",
+            "order": 15,
+            "stringKey": "pedestrian_shade",
+            "routeService": "OSMAND",
+            "routingProfile": "routing-shade-1.xml/pedestrian-shade",
+            "userProfileName": "Shade Profil",
+            "version": 1.0
+         }
+      },
+
+      {
+         "type":"RESOURCES",
+         "pluginId":"shade.plugin",
+         "file":"res"
+      },
+
+      {
+         "type":"FILE",
+         "pluginId":"shade.plugin",
+         "subtype" : "routing_config",
+         "file":"\/routing\/routing-shade-1.xml"
+      },
+
+      {
+         "type":"FILE",
+         "pluginId":"shade.plugin",
+         "subtype" : "rendering_style",
+         "file":"\/rendering\/shade-rendering.render.xml"
+      },
+
+      {
+         "type":"FILE",
+         "pluginId":"shade.plugin",
+         "subtype" : "obf_map",
+         "file":"\/res\/nantes_with_shades.obf"
+      }
+
+   ]
+}
