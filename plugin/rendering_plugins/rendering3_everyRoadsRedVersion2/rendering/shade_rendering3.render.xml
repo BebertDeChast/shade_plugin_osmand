@@ -1,0 +1,45 @@
+<renderingStyle name="Shade rendering3" depends="default" defaultColor="#ff0000" version="1">
+
+    <renderingProperty attr="roadStyle" category="ui_hidden" type="string"/>
+
+    <!--
+    <renderingAttribute name="motorwayRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+    -->
+
+    <!--
+    <renderingAttribute name="route">
+        <case color="#ff0000" strokeWidth="10:6" color_3="#ffffff" strokeWidth_3="5:3">
+            <apply_if nightMode="true" color="#b400a0ff"/>
+        </case>
+    </renderingAttribute>
+    -->
+    
+    <order>
+    </order>
+
+    <text>
+    </text>
+
+    <point>
+	</point>
+
+    <polygon>
+	</polygon>
+
+    <line>
+        <switch>
+            <case tag="highway" value="motorway" color="#ff0000" strokeWidth="5:3"/>
+            <case tag="highway" value="trunk" color="#ff0000" strokeWidth="5:3"/>
+            <case tag="highway" value="primary" color="#ff0000" strokeWidth="5:3"/>
+            <case tag="highway" value="secondary" color="#ff0000" strokeWidth="5:3"/>
+            <case tag="highway" value="tertiary" color="#ff0000" strokeWidth="5:3"/>
+            <case tag="highway" value="residential" color="#ff0000" strokeWidth="5:3"/>
+            <case tag="highway" value="pedestrian" color="#ff0000" strokeWidth="5:3"/>
+            <case tag="highway" value="service" color="#ff0000" strokeWidth="5:3"/>
+        </switch>
+    </line>
+    
+
+</renderingStyle>
