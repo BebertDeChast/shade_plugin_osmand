@@ -27,7 +27,7 @@
     <parameter id="avoid_tunnels" name="Avoid tunnels" description="Avoid tunnels" type="boolean"/>
     <parameter id="avoid_stairs" name="Avoid stairs" description="Avoid stairs" type="boolean"/>
     <parameter id="avoid_test" name="Avoid test" description="Avoid test" type="boolean"/>
-    <parameter id="shading_hour" name="Shading Hour" description="Hour for shading" type="numeric" values="0,8,10,12,14,16,18,20" valueDescriptions="night,8h,10h,12h,14h,16h,18h,20h"/>
+    <parameter id="shading_hour" name="Shading Hour" description="Hour for shading" type="numeric" values="0,8,10,12,14,16,18,20" valueDescriptions="night,8h,10h,12h,14h,16h,18h,20h" default="14"/>
     <parameter id="avoid_unpaved" name="Avoid unpaved roads" description="Avoid unpaved roads" type="boolean"/>
     <parameter id="allow_private" name="Allow private access" description="Allow access to private areas" type="boolean"/>
     <parameter id="allow_via_ferrata" name="Allow via ferrata" description="Allow via ferrata paths" type="boolean"/>

@@ -350,7 +350,7 @@ def main():
         f.write("""" valueDescriptions="night""")
         for hour in shade_hours:
             f.write(f",{hour}h")
-        f.write(""""/>""")
+        f.write("""" default="14"/>""")
 
         f.write(xml_middle)
 
