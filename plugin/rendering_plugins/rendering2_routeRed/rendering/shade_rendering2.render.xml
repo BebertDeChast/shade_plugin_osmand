@@ -1,0 +1,35 @@
+<renderingStyle name="Shade rendering2" depends="default" defaultColor="#ff0000" version="1">
+
+    <renderingProperty attr="roadStyle" category="ui_hidden" type="string"/>
+
+    <!--
+    <renderingAttribute name="motorwayRoadColor">
+        <case attrColorValue="#ff0000"/>
+    </renderingAttribute>
+    -->
+
+    <renderingAttribute name="route">
+        <!-- color_3 used for turn arrows on the route -->
+        <case color="#ff0000" strokeWidth="10:6" color_3="#ffffff" strokeWidth_3="5:3">
+            <apply_if nightMode="true" color="#b400a0ff"/>
+        </case>
+    </renderingAttribute>
+
+    
+    <order>
+    </order>
+
+    <text>
+    </text>
+
+    <point>
+	</point>
+
+    <polygon>
+	</polygon>
+
+    <line>
+    </line>
+    
+
+</renderingStyle>
