@@ -16,8 +16,8 @@ Note that these examples where created by inspiring from:
 - snowmobile.render.xml
 files that you can find here : https://github.com/osmandapp/OsmAnd-resources/tree/master/rendering_styles
 
-Hints of the inspiration FROM Touring view and Snowmobile : 
-""" 
+Hints of the inspiration from Touring view and Snowmobile : 
+```
 <!-- The "Road atlas style" color options align with some conventional road atlas schemes. This was moved to default render, not any more supported in Touring view -->
 <renderingProperty attr="roadStyle" category="ui_hidden" type="string"/>
 
@@ -52,4 +52,5 @@ Hints of the inspiration FROM Touring view and Snowmobile :
         <apply color="#FF00FF" strokeWidth="6:6"/>
     </case>
 </line>
-"""
+```
+lalala
