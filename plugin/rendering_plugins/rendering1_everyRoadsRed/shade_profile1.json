@@ -1,0 +1,8 @@
+{
+  "appMode": {
+    "stringKey": "shade_profile1",
+    "userProfileName": "pedestrian_shade1",
+    "parent": "walking",
+    "iconColor": "GREEN"
+  }
+}

@@ -4,7 +4,7 @@
 
       {
          "type":"PLUGIN",
-         "pluginId":"shade.plugin",
+         "pluginId":"shade.plugin1",
          "version" : 1,
          "icon": {
              "" : "@plugin-icon.png"
@@ -14,8 +14,8 @@
              "" :"@plugin-image.webp"
          },
          "name":{
-            "":"Shading Path Plugin",
-            "fr":"Plugin Itinéraires Ombragés"
+            "":"Shading Path Plugin1",
+            "fr":"Plugin1 Itinéraires Ombragés"
          },
          "description":{
             "":"This package add a plugin for a new routing profile : compute pedestrian route considering shade exposition",
@@ -25,38 +25,30 @@
 
       {
          "type": "PROFILE",
-         "pluginId":"shade.plugin",
-         "file": "shade_profile.json",
+         "pluginId":"shade.plugin1",
+         "file": "shade_profile1.json",
          "appMode": {
             "parent": "walking",
-            "stringKey": "shade_profile",
-            "userProfileName": "pedestrian_shade",
+            "stringKey": "shade_profile1",
+            "userProfileName": "pedestrian_shade1",
             "iconColor": "GREEN"
          },
          "prefs": {
-            "renderer":"shade_rendering.render.xml",
-            "routing_profile": "shade_routing.xml/pedestrian-shade_routing"
+            "renderer":"shade_rendering1.render.xml"
          }
       },
 
       {
          "type":"RESOURCES",
-         "pluginId":"shade.plugin",
+         "pluginId":"shade.plugin1",
          "file":"res"
       },
 
       {
-         "type":"FILE",
-         "pluginId":"shade.plugin",
-         "subtype" : "routing_config",
-         "file":"\/routing\/shade_routing.xml"
-      },
-
-      {
         "type": "FILE",
-        "pluginId": "shade.plugin",
+        "pluginId": "shade.plugin1",
         "subtype": "rendering_style",
-        "file": "\/rendering\/shade_rendering.render.xml"
+        "file": "\/rendering\/shade_rendering1.render.xml"
       }
 
    ]
