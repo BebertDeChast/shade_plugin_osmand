@@ -21,11 +21,13 @@ The full pipeline integrates the [previous project](https://github.com/Jihene556
 Shades are computed by a python script based on previous [previous project](https://github.com/Jihene556/procom_calcul/tree/optimisation). Based on Osm data, it project the shadows of buidings and trees on ways. The output is a percentage of shading. The tags are then added to each ways and storred in a new .pbf.
 
 Format of tags ( shade then the hour is equal to the percentage shade_h_=%) :
+
 ~~~
 shade10=60
 shade12=80
 shade14=70
 ~~~
+
 *No tags are generated for hours without sun*
 
 #### Known limitations
