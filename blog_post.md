@@ -118,7 +118,7 @@ As you can see on the picture above, we can use the plugin directly in OsmAnd to
 
 
 ## User Guide
-We added in the GitHub some documents to explain in detail plugins and how they work. You will find this information inside the folder [plugin](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/plugin). There are several READMEs giving some details, and the pdf  “Plugin Documentation” where you will find general documentation on plugins (how to make a plugin, how to use it, …).
+We added in the GitHub some documents to explain in detail plugins and how they work. You will find this information inside the folder [plugin](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/plugin). There are several READMEs giving some details, and the pdf  [Plugin Documentation](https://github.com/BebertDeChast/shade_plugin_osmand/blob/main/plugin/Plugin%20Documentation.pdf) where you will find general documentation on plugins (how to make a plugin, how to use it, …).
 You can refer to this pdf and its section 5 to have a step by step visual guide of the use of a plugin with IOS. Note that despite some minor differences, it is very similar on Android.
 Moreover, there may be explanations directly inside our code.
 
@@ -144,7 +144,7 @@ The primary objective was to measure the technical and cognitive friction from d
 
 * **Primary blocker (time selection):** The most significant friction point occurred when setting the departure time. All users experienced major difficulties or complete blocks when trying to set the time to 14:00, which prevented them from completing the test independently.
 
-for more informations visit our [github repository](BebertDeChast/shade_plugin_osmand)
+For more information see the folder [user tests](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/user%20tests)
 
 ## Future Improvement
 
@@ -152,9 +152,9 @@ for more informations visit our [github repository](BebertDeChast/shade_plugin_o
 * Enable remote map downloads so users can choose areas.
 * Find a way to retrieve the real current time for custom routing.
 * Add a rendering section with a link to the GitHub section where I store my tests and all unsuccessful attempts.
-* Keep only shading data in the created map, to li
+* Keep only shading data in the created map, to reduce the size of the map.
 
-### About rendering
+#### About rendering
 We faced throughout our project technical issues about rendering. We wanted to make a specific map rendering, which is supposed to be possible in a plugin, by using a custom rendering.render.xml file. This rendering should have taken into account the custom tags we created in our customized map, so that it renders the shade on the different roads (to get a visual representation of what the map looks like if we only look at our tag shades). However, we did not achieve this goal. We managed to change the map rendering with our custom rendering.render.xml in a plugin : see the functional examples on our GitHub [here](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/plugin/rendering_plugins). However, we could not use our custom tag. We tried to generate the .obf correctly with the custom tag in the map section, we tried to use the right syntax to call the custom tags, but no matter how far we've gone, it still doesn't work and we still don't know why.
 
 To find more information about this subject, you can refer to the folder [rendering_plugins](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/plugin/rendering_plugins), which contains some functional examples of the use of custom rendering in a plugin, some explanations on the syntax, in addition of our latest try to use our custom tags (latest try not functional thus - documentation was added to help understand what we were trying to do). 
