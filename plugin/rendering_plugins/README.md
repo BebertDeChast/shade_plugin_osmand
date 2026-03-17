@@ -4,11 +4,15 @@
 
 In this folder, you will find ...
 
--   **`/backend`**: Contains the Python scripts and tools necessary to process OpenStreetMap `.pbf` data. It calculates the shade from buildings and adds this information back into a custom `.obf` map file that OsmAnd can use. See the `backend/README.md` for detailed instructions.
+-   **`rendering1_everyRoadsRed/`** and **`rendering1_everyRoadsRed.osf`**: the first functional example of how to change the rendering with a plugin (changing roads color and width).
 
--   **`/plugin`**: Contains the source code for the OsmAnd plugin itself. This plugin utilizes the custom `.obf` file to:
-    -   Render shaded areas on the map.
-    -   Provide a custom routing profile that favors shaded routes.
+-   **`rendering2_routesRed/`** and **`rendering2_routesRed.osf`**: the second functional example of how to change the rendering with a plugin (changing roads color and width).
+
+-   **`rendering3_everyRoadsRedVersion2/`** and **`rendering3_everyRoadsRed_version2.osf`**: the third functional example of how to change the rendering with a plugin (changing roads color and width). It does almost the same as the first example, with a different method (the width changes from the first example).
+
+-   **`WorkInProgess`**: Contains our latest work, not functionnal, with explanation on what we were trying to do
+    -   list element
+    -   list element
 
 Note that these examples where created by inspiring from: 
 - default.render.xml, 
@@ -53,4 +57,3 @@ Hints of the inspiration from Touring view and Snowmobile :
     </case>
 </line>
 ```
-lalala
