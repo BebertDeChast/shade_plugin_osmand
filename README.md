@@ -14,7 +14,9 @@ This repository is divided into two main parts:
 
 **`/user tests`**: Contains user-oriented testing material and scenarios used to validate plugin behavior and the results.
 
-The **`images`** folder contains images for the osm diary
+**`blog_post.md`** is a copy of the osm diary post.
+
+The **`images`** folder contains images for the osm diary.
 
 ## Goal
 
