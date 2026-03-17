@@ -333,7 +333,7 @@ xml_end = """<!-- Additional tags -->
     </routingProfile>
 </osmand_routing_config>"""
 
-shade_hours = [8,10,12,14,16,18,20]
+shade_hours = ["08","10","12","14","16","18","20"]
 
 def priority_function(p):
     if p != 101:
