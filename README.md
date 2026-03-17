@@ -12,7 +12,7 @@ This repository is divided into two main parts:
     -   Render shaded areas on the map.
     -   Provide a custom routing profile that favors shaded routes.
 
--   **`/user tests`**: Contains user-oriented testing material and scenarios used to validate plugin behavior and the results.
+**`/user tests`**: Contains user-oriented testing material and scenarios used to validate plugin behavior and the results.
 
 The **`images`** folder contains images for the osm diary
 
