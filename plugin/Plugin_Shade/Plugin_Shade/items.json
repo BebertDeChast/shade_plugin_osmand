@@ -16,8 +16,8 @@
             "fr":"Plugin Itinéraires Ombragés"
          },
          "description":{
-            "":"This package add a plugin for a new routing profile : compute pedestrian route considering shade exposition",
-            "fr":"Ce paquet ajoute une extension pour un nouveau profil d'itinéraire : calcul des itinéraires piétons en considérant l'exposition au soleil"
+            "en":"This package adds an extension for a new route profile: calculation of pedestrian routes by considering exposure to the sun. Once the extension is installed and activated, to use it in Navigation: 1. Activate the 'Shade Plugin' plugin and select it 2. In Parameters -> Guidance parameters -> Routing parameters -> Shading Hour, select the time during which you want to carry out your walk.",
+            "fr":"Ce paquet ajoute une extension pour un nouveau profil d'itinéraire : calcul des itinéraires piétons en considérant l'exposition au soleil. Une fois l'extension installée et activée, pour l'utiliser dans Navigation: 1. Activer le plugin 'Shade Plugin' et le sélectionner 2. Dans paramètres -> Paramètres de guidage -> Paramètres de l'itinéraire -> Shading Hour, sélectionner l'heure durant laquelle vous voulez effectuer votre marche."
          }
       },
 
@@ -33,7 +33,7 @@
             "order": 15,
             "stringKey": "pedestrian_shade",
             "routeService": "OSMAND",
-            "routingProfile": "routing-shade-1.xml/pedestrian-shade",
+            "routingProfile": "routing-shade.xml/pedestrian-shade",
             "userProfileName": "Shade Profil",
             "version": 1.0
          }
@@ -49,7 +49,7 @@
          "type":"FILE",
          "pluginId":"shade.plugin",
          "subtype" : "routing_config",
-         "file":"\/routing\/routing-shade-1.xml"
+         "file":"\/routing\/routing-shade.xml"
       },
 
       {
