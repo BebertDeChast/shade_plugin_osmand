@@ -151,7 +151,7 @@ For more information see the folder [user tests](https://github.com/BebertDeChas
 * Improve `.obf` computation (possibly by using PostgreSQL).
 * Enable remote map downloads so users can choose areas.
 * Find a way to retrieve the real current time for custom routing.
-* Add a rendering section with a link to the GitHub section where I store my tests and all unsuccessful attempts.
+* Add shade rendering.
 * Keep only shading data in the created map, to reduce the size of the map.
 
 #### About rendering
