@@ -1,0 +1,8 @@
+{
+  "appMode": {
+    "stringKey": "shade_profilex",
+    "userProfileName": "pedestrian_shadex",
+    "parent": "walking",
+    "iconColor": "RED"
+  }
+}

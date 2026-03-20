@@ -1,0 +1,33 @@
+<renderingStyle name="Shade renderingx" depends="default" defaultColor="#ff0000" version="1">
+    <!-- <renderingProperty attr="roadStyle" category="ui_hidden" type="string"/> -->
+
+    <order>
+        <switch>
+            <case tag="shade08" objectType="2" order="150"/>
+        </switch>
+    </order>
+
+    <line>
+        <switch>
+            <!--
+            <case tag="shade08" color="#ff0000" strokeWidth="15:10"/>
+            <case tag="shade08" value="54" color="#0000ff" strokeWidth="15:10"/>
+            <case tag="shade08" value="4" color="#0000ff" strokeWidth="15:10"/>
+            
+            <case tag="highway" value="motorway" color="#9000ff" strokeWidth="5:3"/>
+            -->
+            
+            <case tag="highway" value="motorway" color="#9000ff" strokeWidth="5:3">
+                <apply_if additional="shade08" color="#ff0000"/>
+            </case>
+            <case tag="highway" value="service" color="#0d00ff" strokeWidth="5:3">
+                <apply_if additional="shade08" color="#ff0000"/>
+                <apply_if additional="shade08=54" color="#44ff00"/>
+            </case>
+            <!--
+            Road 84422192637 osmid 1319096759 highway='service' shade08='54' shade10='30' shade12='3' shade14='0' shade16='0' shade18='0' shade20='36' osmand_highway_integrity_brouting='0'
+            -->
+        </switch>
+    </line>
+
+</renderingStyle>
