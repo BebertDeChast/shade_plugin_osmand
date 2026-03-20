@@ -109,13 +109,19 @@ For the relation between shade percentage and the priority we use the one presen
 A script is available to modify this relation (see [plugin folder](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/plugin) of the github).
 
 ## Demonstration
-In our GitHub, you will find a plugin (.osf file in the [Releases](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/plugin/Releases) folder) which is the functional version of our project. This plugin can be downloaded into the mobile app, and directly used. 
-Here is a simple demonstration of the core result we obtained, this only works for the area around Nantes (France) :
+
+Here is a simple demonstration of the core result we obtained :
 
 ![Demonstration](https://github.com/BebertDeChast/shade_plugin_osmand/blob/main/images/demonstration.png?raw=true)
 
 As you can see on the picture above, we can use the plugin directly in OsmAnd to change the route. The screenshot on the left is without the custom shade routing, the one on the right is with the custom routing. To obtain this result, we asked the app a route to get from point A to point B, first with the default configuration, and then with our custom configuration. To use the custom configuration, we selected our profile (created with the plugin) and activated our custom routing which takes into account the shadow on the path. 
 
+#### Try it yourself 
+
+In our GitHub, you will find a plugin (.osf file in the [Releases](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/plugin/Releases) folder) which is the functional version of our project. This plugin can be downloaded into OsmAnd mobile app, and directly used. 
+At the moment, there are some limitations for the using of the plugin :
+- As we only generate tags for Nantes(France), the plugin only works for this city. If you try outside of this area, there is no error, you can use the plugin as a normal pedestrian routing.
+- The map is included in the plugin, thus the plugin is a bit heavy. A possible improvement is to allow the user to download this map remotely
 
 ## User Guide
 We added in the GitHub some documents to explain in detail plugins and how they work. You will find this information inside the folder [plugin](https://github.com/BebertDeChast/shade_plugin_osmand/tree/main/plugin). There are several READMEs giving some details, and the pdf  [Plugin Documentation](https://github.com/BebertDeChast/shade_plugin_osmand/blob/main/plugin/Plugin%20Documentation.pdf) where you will find general documentation on plugins (how to make a plugin, how to use it, …).
@@ -151,7 +157,7 @@ For more information see the folder [user tests](https://github.com/BebertDeChas
 * Improve `.obf` computation (possibly by using PostgreSQL).
 * Enable remote map downloads so users can choose areas.
 * Find a way to retrieve the real current time for custom routing.
-* Add a rendering section with a link to the GitHub section where I store my tests and all unsuccessful attempts.
+* Add shade rendering.
 * Keep only shading data in the created map, to reduce the size of the map.
 
 #### About rendering
