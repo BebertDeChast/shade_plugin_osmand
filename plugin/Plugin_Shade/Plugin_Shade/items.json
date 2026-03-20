@@ -33,7 +33,7 @@
             "order": 15,
             "stringKey": "pedestrian_shade",
             "routeService": "OSMAND",
-            "routingProfile": "routing-shade-1.xml/pedestrian-shade",
+            "routingProfile": "routing-shade.xml/pedestrian-shade",
             "userProfileName": "Shade Profil",
             "version": 1.0
          }
